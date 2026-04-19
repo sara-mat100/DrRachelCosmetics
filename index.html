@@ -3,10 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rachel Cosmetics Official Store in Lebanon</title>
+    <title>Dr. Rachel Cosmetics</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to Dr. Rachel Cosmetics</h1>
-    <p>Your destination for premium beauty products.</p>
+    <header>
+        <h1>Dr. Rachel Cosmetics</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1">
+                <h3>Product 1</h3>
+                <p>$10.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Product 2">
+                <h3>Product 2</h3>
+                <p>$15.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="product3.jpg" alt="Product 3">
+                <h3>Product 3</h3>
+                <p>$12.00</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+        <div class="shopping-cart">
+            <h2>Shopping Cart</h2>
+            <ul class="cart-items"></ul>
+            <p>Total: $<span class="cart-total">0.00</span></p>
+            <button class="checkout">Checkout</button>
+        </div>
+        <div class="checkout-modal">
+            <h2>Checkout</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+                <label for="address">Address:</label>
+                <input type="text" id="address" required>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 Dr. Rachel Cosmetics</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
