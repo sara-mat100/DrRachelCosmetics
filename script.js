@@ -1,35 +1,73 @@
-// shopping cart functionality
-let cart = [];
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+const addCartButtons = document.querySelectorAll(".add-cart-btn");
+const cartCount = document.getElementById("cartCount");
+const productSearch = document.getElementById("productSearch");
+const searchAction = document.getElementById("searchAction");
+const productCards = document.querySelectorAll(".product-card");
+const searchBtn = document.getElementById("searchBtn");
 
-// add item to cart function
-function addToCart(item) {
-    cart.push(item);
-    console.log(`${item} added to cart`);
+let cartTotal = 0;
+
+if (menuToggle) {
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 }
 
-// remove item from cart function
-function removeFromCart(item) {
-    const index = cart.indexOf(item);
-    if (index > -1) {
-        cart.splice(index, 1);
-        console.log(`${item} removed from cart`);
+document.querySelectorAll(".nav-links a").forEach((link) => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+  });
+});
+
+addCartButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    cartTotal += 1;
+    cartCount.textContent = cartTotal;
+
+    button.textContent = "Added";
+    button.style.opacity = "0.8";
+
+    setTimeout(() => {
+      button.textContent = "Add to Cart";
+      button.style.opacity = "1";
+    }, 1000);
+  });
+});
+
+function filterProducts() {
+  const searchValue = productSearch.value.toLowerCase().trim();
+
+  productCards.forEach((card) => {
+    const productName = card.dataset.name.toLowerCase();
+
+    if (productName.includes(searchValue)) {
+      card.classList.remove("hidden");
     } else {
-        console.log(`${item} not found in cart`);
+      card.classList.add("hidden");
     }
+  });
 }
 
-// checkout function
-function checkout() {
-    if (cart.length === 0) {
-        console.log('Cart is empty. Please add items to cart before checking out.');
-        return;
-    }
-    console.log('Order processed:', cart);
-    cart = []; // clear cart after processing order
+if (searchAction) {
+  searchAction.addEventListener("click", filterProducts);
 }
 
-// example usage
-addToCart('item1');
-addToCart('item2');
-removeFromCart('item1');
-checkout();
+if (productSearch) {
+  productSearch.addEventListener("keyup", (event) => {
+    if (event.key === "Enter") {
+      filterProducts();
+    }
+  });
+}
+
+if (searchBtn) {
+  searchBtn.addEventListener("click", () => {
+    productSearch.focus();
+    window.scrollTo({
+      top: productSearch.offsetTop - 150,
+      behavior: "smooth"
+    });
+  });
+}
