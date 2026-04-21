@@ -1,67 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Rachel Cosmetics</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr Rashel Lebanon | Premium Skincare</title>
+  <meta
+    name="description"
+    content="Shop premium Dr Rashel skincare products in Lebanon. Elegant skincare solutions for hydration, glow, anti-aging, and everyday beauty."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header>
-        <h1>Dr. Rachel Cosmetics</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <h2>Our Products</h2>
-        <div class="product-grid">
-            <div class="product">
-                <img src="product1.jpg" alt="Product 1">
-                <h3>Product 1</h3>
-                <p>$10.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="product2.jpg" alt="Product 2">
-                <h3>Product 2</h3>
-                <p>$15.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="product3.jpg" alt="Product 3">
-                <h3>Product 3</h3>
-                <p>$12.00</p>
-                <button class="add-to-cart">Add to Cart</button>
-            </div>
+  <div class="site-bg"></div>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo">
+        <span class="logo-mark">DR</span>
+        <div class="logo-text">
+          <span class="logo-title">Dr Rashel</span>
+          <span class="logo-subtitle">Lebanon</span>
         </div>
-        <div class="shopping-cart">
-            <h2>Shopping Cart</h2>
-            <ul class="cart-items"></ul>
-            <p>Total: $<span class="cart-total">0.00</span></p>
-            <button class="checkout">Checkout</button>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#products">Products</a>
+        <a href="#categories">Categories</a>
+        <a href="#about">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+        <button class="icon-btn" id="cartBtn" aria-label="Cart">
+          🛍️
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">Premium Skincare in Lebanon</span>
+          <h1>
+            Futuristic Beauty,
+            <span>Elegant Glow</span>
+          </h1>
+          <p>
+            Discover the latest Dr Rashel skincare essentials with a luxurious shopping
+            experience designed for modern women who want results, confidence, and style.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#products" class="btn btn-primary">Shop Now</a>
+            <a href="#categories" class="btn btn-secondary">Explore Collection</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <strong>100+</strong>
+              <span>Beauty Products</span>
+            </div>
+            <div class="stat-card">
+              <strong>Fast</strong>
+              <span>Lebanon Delivery</span>
+            </div>
+            <div class="stat-card">
+              <strong>Trusted</strong>
+              <span>Customer Favorite</span>
+            </div>
+          </div>
         </div>
-        <div class="checkout-modal">
-            <h2>Checkout</h2>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-                <label for="address">Address:</label>
-                <input type="text" id="address" required>
-                <button type="submit">Submit</button>
-            </form>
+
+        <div class="hero-visual">
+          <div class="glow glow-1"></div>
+          <div class="glow glow-2"></div>
+
+          <div class="hero-card main-product">
+            <img
+              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=800&q=80"
+              alt="Luxury skincare product"
+            />
+          </div>
+
+          <div class="floating-card floating-top">
+            <span>Hydration</span>
+            <strong>Vitamin C + Glow</strong>
+          </div>
+
+          <div class="floating-card floating-bottom">
+            <span>Trending Now</span>
+            <strong>Professional Skin Routine</strong>
+          </div>
         </div>
-    </main>
-    <footer>
-        <p>&copy; 2026 Dr. Rachel Cosmetics</p>
-    </footer>
-    <script src="script.js"></script>
+      </div>
+    </section>
+
+    <section class="search-bar-section">
+      <div class="container">
+        <div class="search-box">
+          <input
+            type="text"
+            id="productSearch"
+            placeholder="Search for serum, cleanser, sunscreen..."
+          />
+          <button id="searchAction">Search</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <span class="section-label">Featured Collection</span>
+          <h2>Best Selling Products</h2>
+          <p>
+            A curated skincare selection with a clean premium look for your ecommerce website.
+          </p>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+          <article class="product-card" data-name="Dr Rashel Vitamin C Serum">
+            <div class="product-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80"
+                alt="Dr Rashel Vitamin C Serum"
+              />
+              <span class="product-tag">Best Seller</span>
+            </div>
+            <div class="product-info">
+              <h3>Vitamin C Brightening Serum</h3>
+              <p>Glow-boosting serum for brighter, fresher, more radiant skin.</p>
+              <div class="product-bottom">
+                <strong>$14.00</strong>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Dr Rashel Hyaluronic Acid Serum">
+            <div class="product-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=800&q=80"
+                alt="Dr Rashel Hyaluronic Acid Serum"
+              />
+              <span class="product-tag">Hydration</span>
+            </div>
+            <div class="product-info">
+              <h3>Hyaluronic Acid Serum</h3>
+              <p>Deep hydration and plumping care for smooth and healthy-looking skin.</p>
+              <div class="product-bottom">
+                <strong>$13.00</strong>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Dr Rashel Retinol Cream">
+            <div class="product-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1612817159949-195b6eb9e31a?auto=format&fit=crop&w=800&q=80"
+                alt="Dr Rashel Retinol Cream"
+              />
+              <span class="product-tag">Anti-Aging</span>
+            </div>
+            <div class="product-info">
+              <h3>Retinol Renewal Cream</h3>
+              <p>Elegant anti-aging care to improve texture, tone, and softness.</p>
+              <div class="product-bottom">
+                <strong>$16.00</strong>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card" data-name="Dr Rashel Niacinamide Serum">
+            <div class="product-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80"
+                alt="Dr Rashel Niacinamide Serum"
+              />
+              <span class="product-tag">New</span>
+            </div>
+            <div class="product-info">
+              <h3>Niacinamide Refining Serum</h3>
+              <p>Refines pores, balances skin, and supports a smoother clear complexion.</p>
+              <div class="product-bottom">
+                <strong>$15.00</strong>
+                <button class="add-cart-btn">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="categories section" id="categories">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="section-label">Shop by Category</span>
+          <h2>Designed for Modern Beauty Needs</h2>
+        </div>
+
+        <div class="category-grid">
+          <div class="category-card">
+            <span class="category-icon">✦</span>
+            <h3>Serums</h3>
+            <p>Advanced formulas for glow, hydration, and repair.</p>
+          </div>
+          <div class="category-card">
+            <span class="category-icon">◌</span>
+            <h3>Cleansers</h3>
+            <p>Fresh, gentle cleansing for everyday skincare rituals.</p>
+          </div>
+          <div class="category-card">
+            <span class="category-icon">⬡</span>
+            <h3>Moisturizers</h3>
+            <p>Elegant hydration with lightweight and rich textures.</p>
+          </div>
+          <div class="category-card">
+            <span class="category-icon">✷</span>
+            <h3>Sun Care</h3>
+            <p>Protect your glow with modern daily SPF essentials.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="container about-grid">
+        <div class="about-left">
+          <span class="section-label">Why Choose Us</span>
+          <h2>Professional, stylish, and made to convert</h2>
+          <p>
+            This layout gives your skincare store a premium identity. It feels clean,
+            modern, and trustworthy while still being visually attractive for shoppers.
+          </p>
+
+          <div class="about-points">
+            <div class="about-point">
+              <strong>Elegant design</strong>
+              <span>Luxury-inspired visuals with a futuristic touch.</span>
+            </div>
+            <div class="about-point">
+              <strong>Mobile friendly</strong>
+              <span>Looks beautiful on desktop, tablet, and mobile.</span>
+            </div>
+            <div class="about-point">
+              <strong>Lebanon-ready</strong>
+              <span>Perfect for adding WhatsApp orders and local delivery flow.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="info-panel">
+            <div class="info-card">
+              <h3>Fast Shopping Experience</h3>
+              <p>Smooth product cards, polished sections, and modern call-to-action buttons.</p>
+            </div>
+            <div class="info-card">
+              <h3>Premium Brand Feel</h3>
+              <p>Built to make Dr Rashel products look more high-end and professional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews section" id="reviews">
+      <div class="container">
+        <div class="section-heading center">
+          <span class="section-label">Customer Love</span>
+          <h2>What Clients Say</h2>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <p>
+              “The website feels so elegant and premium. The products look much more
+              professional and easy to shop.”
+            </p>
+            <strong>— Nour, Beirut</strong>
+          </div>
+
+          <div class="review-card">
+            <p>
+              “Very modern design, and the product sections are clean and beautiful.
+              It gives luxury skincare brand vibes.”
+            </p>
+            <strong>— Lama, Tripoli</strong>
+          </div>
+
+          <div class="review-card">
+            <p>
+              “I love how simple but classy it looks. It feels up to date and trustworthy.”
+            </p>
+            <strong>— Reem, Saida</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <span class="section-label">Ready to order?</span>
+            <h2>Shop Dr Rashel in Lebanon with confidence</h2>
+          </div>
+          <a
+            href="https://wa.me/96100000000?text=Hello%20I%20want%20to%20order%20Dr%20Rashel%20products"
+            target="_blank"
+            class="btn btn-primary"
+          >
+            Order on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contact">
+    <div class="container footer-grid">
+      <div>
+        <h3>Dr Rashel Lebanon</h3>
+        <p>
+          Elegant skincare shopping experience for premium beauty lovers in Lebanon.
+        </p>
+      </div>
+
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="https://wa.me/96100000000" target="_blank">WhatsApp</a></li>
+          <li><a href="mailto:hello@drrashellebanon.com">hello@drrashellebanon.com</a></li>
+          <li>Lebanon</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Dr Rashel Lebanon. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
